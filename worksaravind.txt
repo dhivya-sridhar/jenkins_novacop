@@ -1,6 +1,0 @@
-1. jquery
-2.d3js
-3.object360 powermap
-4.metadata api package.xml generation
-5.talk to sudhir about heroku
-6.security auth

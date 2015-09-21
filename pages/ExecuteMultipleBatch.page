@@ -1,0 +1,306 @@
+<apex:page showHeader="false" controller="ExecuteMultipleBatchController"  action="{!initialize}" sidebar="false" contentType="" applyHtmlTag="false" docType="html" standardStylesheets="false" title="My Door" >
+<style>
+
+
+html {
+    background: none repeat scroll 0 0 #2d2d2d;
+    font-family: arial;
+}
+#mainContainer {
+    height: 200px;
+    width: 100%;
+}
+.button {
+    background: #87e0fd; /* Old browsers */
+    background: -moz-linear-gradient(top, #87e0fd 0%, #53cbf1 40%, #05abe0 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#87e0fd), color-stop(40%,#53cbf1), color-stop(100%,#05abe0)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=0 ); /* IE6-9 */    border: 2px solid #606060;
+    border-radius: 14px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 15%;
+    width: 330px;
+}
+.batchCountClass {
+    color: #2d2d2d;
+    font-size: 18px;
+    line-height: 0;
+    margin: 5px;
+}
+.loaderBarDiv {
+    border: 1px solid #ffffff;
+    margin-top: 30px;
+    display: none;
+    height: 10px;
+    width: 350px;
+}
+.loaderBar {
+   background: linear-gradient(to bottom, #d2ff52 0%, #91e842 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    height: 100%;
+}
+
+.messageText {
+}
+.messageDiv {
+    margin: auto;
+    position: relative;
+}
+.messageDivContainer {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 2px solid #4a4a4a;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 15%;
+    text-align: center;
+    width: 475px;
+}
+
+.hiddenDot{
+    color:#2d2d2d;
+}
+</style>
+
+<apex:form id="dataBean">
+    <apex:inputhidden id="batchJobCountId"  value="{!batchJobCount}"/>
+</apex:form>
+<center>
+    <div id='mainContainer'>
+        <button id='executeButton' class='button'>
+            Click to execute <span class='batchCountClass'> </span> batch jobs
+        </button>  
+    </div>
+
+    <div class='loaderBarDiv'>
+        <div class='loaderBar'>
+        </div>     
+    </div>
+</center> 
+
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<apex:includeScript value="/soap/ajax/15.0/connection.js"/>
+<apex:includeScript value="/soap/ajax/15.0/apex.js"/>
+
+<script>
+
+    
+    var dotLoaderInterval;
+    var ajaxInterval;
+    
+    var isAjaxCallActive = false;
+    var enableExecute = true;
+    
+    var maxCount = 0;
+    var setCounter = 0;
+    var queueVerifierCount = 0;
+    
+    var PROCESS_TYPE_BATCH_FILE = "APEX BATCH FILE";
+    var PROCESS_TYPE_SCRIPT_FILE = "APEX SCRIPT FILE";
+    var DOT_LOADER_HTML = "<span class='dotLoaderContainer'><span class='dotLoader hiddenDot'>.</span><span class='dotLoader hiddenDot'>.</span><span class='dotLoader hiddenDot'>.</span></span>";
+    
+    
+    $(document).ready(function(){
+
+           maxCount = parseInt($("input[id*='batchJobCountId']").val());
+           $('.batchCountClass').text(maxCount);
+           eventHandler();
+    });
+
+
+    function eventHandler(){
+        
+
+        $("#executeButton").click(function(){
+                
+                $("this").hide();
+                $('.loaderBarDiv').show();
+                dotLoaderAnimate();
+                updateMessageDiv('Executing');
+                callAjax_getBatchJobs();
+                callAjax_executeBatchJob();
+
+        });
+                                                                                  
+    }
+
+
+
+    function callAjax_executeBatchJob(){
+    
+         ajaxInterval= setInterval(function(){   
+            
+             if(setCounter >= maxCount){   
+             
+                 callAjax_checkQueueCount(PROCESS_TYPE_SCRIPT_FILE);
+                 
+             }else{
+             
+                 if(!isAjaxCallActive && enableExecute){
+                 
+                     isAjaxCallActive = true;
+                        
+                     updateMessageDiv('Executing '+(setCounter+1)+' of '+maxCount);
+                        
+                     ExecuteMultipleBatchController.executeBatchJob(setCounter,function(result, event){
+        
+                        if(event.status) {
+                          
+                           var percentageCompleted = parseFloat((setCounter)/maxCount)*100;
+                           
+                           console.log('execute BatchJob processing'+setCounter );
+                           
+                           $('.loaderBar').css('width',percentageCompleted+'%');
+                           setCounter = setCounter + 1;
+                           callAjax_checkQueueCount(PROCESS_TYPE_BATCH_FILE); 
+                           
+                        }
+                        
+                     });
+                 }else{
+                     
+                     callAjax_checkQueueCount(PROCESS_TYPE_BATCH_FILE);
+                     
+                 }
+             }  
+             
+         }, 3000);
+
+    }
+    
+    
+
+    function callAjax_checkQueueCount(processType){
+
+            ExecuteMultipleBatchController.checkQueueCount(function(result, event){
+            
+                if(event.status) {
+                
+                    isAjaxCallActive = false;
+                    
+                    if(processType==PROCESS_TYPE_BATCH_FILE){
+                    
+                        if(parseInt(result)>4){
+                           enableExecute = false;
+                        }else{
+                           enableExecute = true;
+                        }
+                        
+                    }else if(processType==PROCESS_TYPE_SCRIPT_FILE ){
+                        
+                        console.log('callAjax_checkQueueCount...'+result);
+                        updateMessageDiv('Waiting for batches to finish processing');
+                        
+                        if(parseInt(result)== 0){
+                            
+                            queueVerifierCount++;
+                            
+                            if(queueVerifierCount>3){
+                            
+                                clearInterval(ajaxInterval);
+                                updateMessageDiv('Executing Apex Scripts');
+                                callAjax_executeApexScript();
+                            }
+
+                        }else{
+                            queueVerifierCount = 0;
+                        }
+                    
+                    }
+
+                }
+            
+            });
+
+    }
+    
+   
+   function callAjax_executeApexScript(){
+
+            ExecuteMultipleBatchController.executeApexScript(function(result, event){
+            
+                if(event.status) {
+                    
+                     updateMessageDiv('Done!');
+                     $('.loaderBar').css('width','100%');
+
+                }
+            
+            });
+
+    }
+    
+    
+    function callAjax_getBatchJobs(){
+
+        ExecuteMultipleBatchController.getBatchJobsJSON(function(result, event){
+        
+            if(event.status) {
+                result = decodeAjaxCallBack(result);
+            }
+        
+        });
+
+    }
+
+
+    function updateMessageDiv(message){
+            
+            var loaderHtml = DOT_LOADER_HTML;
+            
+            if(message=='Done!'){
+                clearInterval(dotLoaderInterval);
+                loaderHtml = "";
+            }
+            
+            $('#mainContainer').html('<div class="messageDivContainer"><div class="messageText">'+message+loaderHtml+'</div></div>');
+    
+    }
+
+
+    function dotLoaderAnimate(){
+        
+        var dotLoaderCount = 0;
+        
+        dotLoaderInterval= setInterval(function(){
+            
+            dotLoaderCount++;
+            
+            if(dotLoaderCount>$('.dotLoader').length){
+                dotLoaderCount = 2;
+                $('.dotLoader').addClass('hiddenDot');
+            }
+            
+            $('.dotLoader:nth-child('+dotLoaderCount+')').removeClass('hiddenDot');
+            
+            
+        
+        }, 800);
+
+        
+    }
+
+    function decodeAjaxCallBack(text){
+    
+        return text.replace(/&(l|g|quo)t;/g, function(a,b){
+            return {
+                l   : '<',
+                g   : '>',
+                quo : '"'
+            }[b];
+        })
+    
+    }
+
+</script>
+
+</apex:page>
