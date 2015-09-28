@@ -1,0 +1,1165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Apttus_Instance_Url</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Apttus Instance Url</shortDescription>
+        <value>https://gepw--apttus-config2.na18.visual.force.com/</value>
+    </labels>
+    <labels>
+        <fullName>CSERP_Opportunity_Owner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SSO of Owner of Opportunities(coming from CSERP)</shortDescription>
+        <value>204010910</value>
+    </labels>
+    <labels>
+        <fullName>CSR_Address</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_Address</shortDescription>
+        <value>Address</value>
+    </labels>
+    <labels>
+        <fullName>CSR_CounterReading</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_CounterReading</shortDescription>
+        <value>Counter Reading (kW)</value>
+    </labels>
+    <labels>
+        <fullName>CSR_CustomerInformation</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_CustomerInformation</shortDescription>
+        <value>Customer Information</value>
+    </labels>
+    <labels>
+        <fullName>CSR_CustomerName</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_CustomerName</shortDescription>
+        <value>Customer Name</value>
+    </labels>
+    <labels>
+        <fullName>CSR_CustomerServiceReport</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_CustomerServiceReport</shortDescription>
+        <value>Customer Service Report</value>
+    </labels>
+    <labels>
+        <fullName>CSR_CustomerSignature</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_CustomerSignature</shortDescription>
+        <value>Customer Signature</value>
+    </labels>
+    <labels>
+        <fullName>CSR_CustomerWO</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_CustomerWO</shortDescription>
+        <value>Customer WO</value>
+    </labels>
+    <labels>
+        <fullName>CSR_Date</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_Date</shortDescription>
+        <value>Date</value>
+    </labels>
+    <labels>
+        <fullName>CSR_Description</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_Description</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>CSR_Duration</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_Duration</shortDescription>
+        <value>Duration</value>
+    </labels>
+    <labels>
+        <fullName>CSR_EndDate</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_EndDate</shortDescription>
+        <value>End Date</value>
+    </labels>
+    <labels>
+        <fullName>CSR_ExpenseItem</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_ExpenseItem</shortDescription>
+        <value>Expense Item</value>
+    </labels>
+    <labels>
+        <fullName>CSR_ExpensesLines</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_ExpensesLines</shortDescription>
+        <value>Expenses Lines</value>
+    </labels>
+    <labels>
+        <fullName>CSR_InstalledDate</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_InstalledDate</shortDescription>
+        <value>Installed Date</value>
+    </labels>
+    <labels>
+        <fullName>CSR_LaborItem</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_LaborItem</shortDescription>
+        <value>Labor Item</value>
+    </labels>
+    <labels>
+        <fullName>CSR_LaborLines</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_LaborLines</shortDescription>
+        <value>Labor Lines</value>
+    </labels>
+    <labels>
+        <fullName>CSR_Name</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>CSR_Notes</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_Notes</shortDescription>
+        <value>Notes</value>
+    </labels>
+    <labels>
+        <fullName>CSR_OperatingHour</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_OperatingHour</shortDescription>
+        <value>Operating Hour</value>
+    </labels>
+    <labels>
+        <fullName>CSR_PartLines</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_PartLines</shortDescription>
+        <value>Part Lines</value>
+    </labels>
+    <labels>
+        <fullName>CSR_Product</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_Product</shortDescription>
+        <value>Product</value>
+    </labels>
+    <labels>
+        <fullName>CSR_ProductDetails</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_ProductDetails</shortDescription>
+        <value>Product Details</value>
+    </labels>
+    <labels>
+        <fullName>CSR_Quantity</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_Quantity</shortDescription>
+        <value>Quantity</value>
+    </labels>
+    <labels>
+        <fullName>CSR_SRNumber</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR field label</shortDescription>
+        <value>SR Number</value>
+    </labels>
+    <labels>
+        <fullName>CSR_SerialNumber</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_SerialNumber</shortDescription>
+        <value>Serial Number</value>
+    </labels>
+    <labels>
+        <fullName>CSR_ServiceActivityCode</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_ServiceActivityCode</shortDescription>
+        <value>Service Activity Code</value>
+    </labels>
+    <labels>
+        <fullName>CSR_ServiceEndDate</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_ServiceEndDate</shortDescription>
+        <value>Service End Date</value>
+    </labels>
+    <labels>
+        <fullName>CSR_ServiceStartDate</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_ServiceStartDate</shortDescription>
+        <value>Service Start Date</value>
+    </labels>
+    <labels>
+        <fullName>CSR_StartDate</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_StartDate</shortDescription>
+        <value>Start Date</value>
+    </labels>
+    <labels>
+        <fullName>CSR_SubInventory</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_SubInventory</shortDescription>
+        <value>Sub Inventory</value>
+    </labels>
+    <labels>
+        <fullName>CSR_Subject</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_Subject</shortDescription>
+        <value>Subject</value>
+    </labels>
+    <labels>
+        <fullName>CSR_TaskNumber</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_TaskNumber</shortDescription>
+        <value>Task Number</value>
+    </labels>
+    <labels>
+        <fullName>CSR_Technician</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_Technician</shortDescription>
+        <value>Technician</value>
+    </labels>
+    <labels>
+        <fullName>CSR_ThirdPartyTechnicianName</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_ThirdPartyTechnicianName</shortDescription>
+        <value>Third Party Technician Name</value>
+    </labels>
+    <labels>
+        <fullName>CSR_ToolCalibrationDate</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_ToolCalibrationDate</shortDescription>
+        <value>Tool Calibration Date</value>
+    </labels>
+    <labels>
+        <fullName>CSR_ToolName</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_ToolName</shortDescription>
+        <value>Tool Name</value>
+    </labels>
+    <labels>
+        <fullName>CSR_ToolNextCalibrationDate</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_ToolNextCalibrationDate</shortDescription>
+        <value>Tool Next Calibration Date</value>
+    </labels>
+    <labels>
+        <fullName>CSR_ToolSerialNumber</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_ToolSerialNumber</shortDescription>
+        <value>Tool Serial Number</value>
+    </labels>
+    <labels>
+        <fullName>CSR_Tools</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_Tools</shortDescription>
+        <value>Tools</value>
+    </labels>
+    <labels>
+        <fullName>CSR_TurbineEndDate</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_TurbineEndDate</shortDescription>
+        <value>Turbine Start Date/Time</value>
+    </labels>
+    <labels>
+        <fullName>CSR_TurbineName</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_TurbineName</shortDescription>
+        <value>Turbine Name</value>
+    </labels>
+    <labels>
+        <fullName>CSR_TurbineStartDate</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_TurbineStartDate</shortDescription>
+        <value>Turbine Stop Date/Time</value>
+    </labels>
+    <labels>
+        <fullName>CSR_TurbineStatus</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_TurbineStatus</shortDescription>
+        <value>Turbine Status at Time of Service</value>
+    </labels>
+    <labels>
+        <fullName>CSR_UOM</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_UOM</shortDescription>
+        <value>UOM</value>
+    </labels>
+    <labels>
+        <fullName>CSR_Vendor</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_Vendor</shortDescription>
+        <value>Vendor</value>
+    </labels>
+    <labels>
+        <fullName>CSR_WorkDetails</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_WorkDetails</shortDescription>
+        <value>Work Details</value>
+    </labels>
+    <labels>
+        <fullName>CSR_signature</fullName>
+        <categories>CSR</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CSR_signature</shortDescription>
+        <value>Signature (Task Number #</value>
+    </labels>
+    <labels>
+        <fullName>Common_Nuclear_Status</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CommonNuclearStatus</shortDescription>
+        <value>Nuclear ComOps Status change failed.In order to move to the desired stage:</value>
+    </labels>
+    <labels>
+        <fullName>Confirm_Bid_Mailed_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirm Bid Mailed Date</shortDescription>
+        <value>Opportunity requires a Proposal Sent Date.</value>
+    </labels>
+    <labels>
+        <fullName>Confirm_Bid_Validity_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirm Bid Validity Date</shortDescription>
+        <value>Opportunity requires a Bid Validity Date.</value>
+    </labels>
+    <labels>
+        <fullName>DP_Gas_Recip_Engines</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DP Gas Recip Engines</shortDescription>
+        <value>Recip Engines</value>
+    </labels>
+    <labels>
+        <fullName>DP_Gas_Turbine</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DP Gas Turbine</shortDescription>
+        <value>Gas Turbines</value>
+    </labels>
+    <labels>
+        <fullName>DP_Services</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DP Services</shortDescription>
+        <value>Services</value>
+    </labels>
+    <labels>
+        <fullName>DP_Waukesha_Pricelist</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DP Waukesha Pricelist</shortDescription>
+        <value>a8R12000000TN3w</value>
+    </labels>
+    <labels>
+        <fullName>Delegated_Checklist_Items_Report_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delegated Checklist Items Report ID</shortDescription>
+        <value>00OZ0000000Xnbq</value>
+    </labels>
+    <labels>
+        <fullName>ERA_SoldTo_Account_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ERA SoldTo Account ID</shortDescription>
+        <value>CF00N11000000Ve4U_lkid</value>
+    </labels>
+    <labels>
+        <fullName>ERP_Shipt_To_Sold_To_id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ERP Shipt To (Sold To id)</shortDescription>
+        <value>CF00NK0000001FEOu_lkid</value>
+    </labels>
+    <labels>
+        <fullName>ES_EHS_permission_set</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ES_EHS permission set</shortDescription>
+        <value>Water_ES_EHS_Approvers</value>
+    </labels>
+    <labels>
+        <fullName>GEPWPGP_OpptyTeamMember_Mail</fullName>
+        <categories>Created for PGP to send an email to &apos;michael.jandrisevits@ge.com&apos; If Team Role = &quot;Combined Cycle Value Optimization&quot;</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PGP OpptyTeamMember Mail</shortDescription>
+        <value>michael.jandrisevits@ge.com</value>
+    </labels>
+    <labels>
+        <fullName>GEPW_DP_PCode_Filter</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DP ProductCode Filter</shortDescription>
+        <value>P</value>
+    </labels>
+    <labels>
+        <fullName>GEPW_Nuclear_FAR_Email</fullName>
+        <categories>Created for Nuclear to send a FAR email to &apos;dlenergy.genebilling@ge.com&apos;</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GEPW Nuclear FAR Email</shortDescription>
+        <value>dlenergy.genebilling@ge.com</value>
+    </labels>
+    <labels>
+        <fullName>GE_ES_Quote_M_F_label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE_ES_Quote_M/F_label</shortDescription>
+        <value>Dear</value>
+    </labels>
+    <labels>
+        <fullName>GE_HQ_Dummy_Recommendation_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Used for Creating ES KYC Records</shortDescription>
+        <value>a1WA0000000J7BN</value>
+    </labels>
+    <labels>
+        <fullName>GE_HQ_KYC_Default_Record_Type_API_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE_HQ_KYC_Default_Record_Type_API_Name</shortDescription>
+        <value>GE_PRM_KYC</value>
+    </labels>
+    <labels>
+        <fullName>GE_Integration_Environment</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE Integration Environment</shortDescription>
+        <value>Prod</value>
+    </labels>
+    <labels>
+        <fullName>GE_MDM_Integration_Environment</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE MDM - Integration Environment</shortDescription>
+        <value>GE MDM Integration</value>
+    </labels>
+    <labels>
+        <fullName>GE_MDM_KYC_Integration_Environment</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE MDM KYC - Integration Environment</shortDescription>
+        <value>GE MDM Integration</value>
+    </labels>
+    <labels>
+        <fullName>GE_OG_PII_DealReview_Count</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OG PII deal review template records per page</shortDescription>
+        <value>50</value>
+    </labels>
+    <labels>
+        <fullName>GE_OG_PII_Opportunity_RecordTypeId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OG PII Opportunity RecordTypeId</shortDescription>
+        <value>012A0000000iN0F</value>
+    </labels>
+    <labels>
+        <fullName>GE_OG_TM_Logo_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE logo static resource id</shortDescription>
+        <value>1322961456000/GEImg</value>
+    </labels>
+    <labels>
+        <fullName>GE_OG_TM_Opportunity_RecordTypeId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OG TM Opportunity</shortDescription>
+        <value>012A0000000iN0G</value>
+    </labels>
+    <labels>
+        <fullName>GE_Organization_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE Organization Name</shortDescription>
+        <value>PW</value>
+    </labels>
+    <labels>
+        <fullName>GE_PRM_Rec_Hist_Rpt</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>To Accomodate Recommendation History Report Id</shortDescription>
+        <value>00OA0000004k5Xi</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_AW_Email_Notification</fullName>
+        <categories>AWEmailNotification</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE_PW_AW_Email_Notification</shortDescription>
+        <value>katalin.bodi@ge.com</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_Activate_Trigger</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Activate Trigger</shortDescription>
+        <value>Yes</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_AllRampData_Report_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE_PW_AllRampData_Report_ID</shortDescription>
+        <value>00OA00000049W8x</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_Boycott_Report_Form</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE_PW_Boycott Report Form</shortDescription>
+        <value>http://supportcentral.ge.com/ProcessMaps/form_new_request.asp?prod_id=134780&amp;form_id=479494&amp;node_id=1420782&amp;map_id=&amp;reference_id=&amp;reference_type</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_Delegated_Checklist_Items_Report_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delegated Checklist Items Report ID</shortDescription>
+        <value>00OA0000004knUX</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_ERA_SoldTo_Account_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ERA SoldTo Account ID</shortDescription>
+        <value>CF00NK0000001FDa6_lkid</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_ErrorMsg_On_OptyLineItem</fullName>
+        <categories>Error Msg</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error msg based on opty line item fields</shortDescription>
+        <value>All Primary product offerings must have As-Sold Price and Cost values entered</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_Insight_compass_url</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Insight compass</shortDescription>
+        <value>https://gepw.my.salesforce.com/home/home.jsp?sdtd=1</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_Insight_production</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Insight Production</shortDescription>
+        <value>https://insight.gewater.com/</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_Ops_Email</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE PW Ops Email</shortDescription>
+        <value>pwcompassitops@ge.com</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_PGP_Buisness_Admin</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PGP Buisness Admin</shortDescription>
+        <value>GE_PW_PGP_Business_Admin</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_PGS_SuperUser_Approver_Group</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE P&amp;W PGS Super User Approver Public Group</shortDescription>
+        <value>GE P&amp;W PGS Super User Approver</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_PGS_VisualMilestone_Deal_Approved</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE PW PGS VisualMilestone Deal Approved</shortDescription>
+        <value>To get to green status: 
+      •The “Pricing” and “Risk” buttons need to be green.</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_PGS_VisualMilestone_Opportunity_Dispositioned</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE PW PGS VisualMilestone Opportunity Dispositioned</shortDescription>
+        <value>To get to green status: 
+     •Update the opportunity stage on the main opportunity page to “Won”, “Lost” or “Cancelled”.</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_PGS_VisualMilestone_Pricing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE PW PGS VisualMilestone Pricing</shortDescription>
+        <value>To get to green status: 
+     •Check the “No Price DOA” box in the Price Management Summary on the Main Opportunity page.
+     •Submit price deviations for approval and obtain approval from Approvers in SFDC.</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_PGS_VisualMilestone_Proposal_Generated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE PW PGS VisualMilestone Proposal Generated</shortDescription>
+        <value>To get to green status: 
+      •If the Risk Path is “Express” then check the proposal generated box.
+      •If the Risk Path is “Fast Track” or “Conventional” then check the proposal generated box. 
+      •The “Deal Approved” button needs to be green.</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_PGS_VisualMilestone_R1_Meeting</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE PW PGS VisualMilestone-R1 Meeting</shortDescription>
+        <value>To get to green status: 
+     •Submit the opportunity to Comm Ops
+     •Change the R status to “R1 accepted”</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_PGS_VisualMilestone_Risk</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE PW PGS VisualMilestone-Risk</shortDescription>
+        <value>To get to green status: 
+     •If the Risk Path is “Fast Track with Regional Approval” then complete the “Regional Approval granted by” field in Risk Management.
+     •If the Risk Path is “Conventional” then all Risk Factors need to be answered and submitted for approval. 
+     •Check the CD/CL box or obtain approval in SFDC from the Approvers.</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_PW_402</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE_PW_PW-402</shortDescription>
+        <value>http://libraries.ge.com/download?fileid=379370222101&amp;entity_id=31180440101&amp;sid=101</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_Red_Flag_Indicators</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE_PW_Red Flag Indicators</shortDescription>
+        <value>http://www.bis.doc.gov/index.php/component/content/article/23-compliance-a-training/51-red-flag-indicators</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_RisK_Factor_Deviation_01</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE PW RisK Factor Deviation 01</shortDescription>
+        <value>Yes - if yes, then no other questions in the section can apply</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_Risk_Factor_01</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE PW Risk Factor 01</shortDescription>
+        <value>01. Does your contract permit unrestricted and unconditional global sourcing?</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_Service_Now_Email</fullName>
+        <categories>email</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE PW Service Now Email</shortDescription>
+        <value>g00667017@mail.ad.ge.com,g00415399@mail.ad.ge.com,g00683767@mail.ad.ge.com,g00393738@mail.ad.ge.com</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_Sourcing_RecordType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE PW Sourcing RecordType</shortDescription>
+        <value>Sourcing</value>
+    </labels>
+    <labels>
+        <fullName>GE_PW_SubmittoOSC_Mail</fullName>
+        <categories>OSC mail</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Id for Submit To OSC Mail</shortDescription>
+        <value>myacontract.managers@ge.com</value>
+    </labels>
+    <labels>
+        <fullName>GE_Serivce_Now_Assignment_Group</fullName>
+        <categories>Service Now</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE_Serivce_Now_Assignment_Group</shortDescription>
+        <value>L2 GAMS ENERGY SFDC APP SPT</value>
+    </labels>
+    <labels>
+        <fullName>GE_Service_Now_CI</fullName>
+        <categories>Service Now</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE_Service_Now_CI</shortDescription>
+        <value>SFDC-ENERGY</value>
+    </labels>
+    <labels>
+        <fullName>GE_Service_Now_Category</fullName>
+        <categories>Service Now</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE_Service_Now_Category</shortDescription>
+        <value>Account Access</value>
+    </labels>
+    <labels>
+        <fullName>GE_Service_Now_Impact</fullName>
+        <categories>Service Now</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE_Service_Now_Impact</shortDescription>
+        <value>High</value>
+    </labels>
+    <labels>
+        <fullName>GE_Service_Now_Priority</fullName>
+        <categories>Service Now</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE_Service_Now_Priority</shortDescription>
+        <value>3 – Normal (3 business days)</value>
+    </labels>
+    <labels>
+        <fullName>GE_Service_Now_TSG_Mail</fullName>
+        <categories>Email</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE_Service_Now_TSG_Mail</shortDescription>
+        <value>pwcompassitsnsrcreation@ge.com</value>
+    </labels>
+    <labels>
+        <fullName>GE_Service_Now_Urgency</fullName>
+        <categories>Service Now</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>GE_Service_Now_Urgency</shortDescription>
+        <value>Medium</value>
+    </labels>
+    <labels>
+        <fullName>Get_Pricing_Data</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomAction11</shortDescription>
+        <value>Get PCE Cost and Price</value>
+    </labels>
+    <labels>
+        <fullName>GoToPricingNew</fullName>
+        <categories>Button Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomAction11</shortDescription>
+        <value>Get Pricing Data</value>
+    </labels>
+    <labels>
+        <fullName>Instance_Server_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pod Reference</shortDescription>
+        <value>https://gepw--c.na18.content.force.com</value>
+    </labels>
+    <labels>
+        <fullName>Login_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Login URL</shortDescription>
+        <value>https://gepw.my.salesforce.com</value>
+    </labels>
+    <labels>
+        <fullName>Non_SF_Users</fullName>
+        <categories>Non SF User Emails</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NonSFUsers</shortDescription>
+        <value>narasimha.vadde@ge.com,Michele.VanderWiede@ge.com,constance.westlake@ge.com,joe.cacanindin@ge.com,jacob.penumudi@ge.com,Komal.Gakhar@ge.com,Imran.Zafar@ge.com</value>
+    </labels>
+    <labels>
+        <fullName>Oppty_disposition_Primary_Reason_Code</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirm the Oppty has a valid disposition Primary Reason Code</shortDescription>
+        <value>Opportunity requires a valid disposition Primary Reason Code.</value>
+    </labels>
+    <labels>
+        <fullName>Oppty_valid_Disposition_fields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Confirm the Oppty has valid Disposition fields: Contract Amount; Contract #; Con</shortDescription>
+        <value>Opportunity disposition fields must be completed: Contract Amount; Contract #; Contract Acceptance Date.</value>
+    </labels>
+    <labels>
+        <fullName>OptionGroupGTG</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OptionGroupGTG</shortDescription>
+        <value>GT Frame</value>
+    </labels>
+    <labels>
+        <fullName>OptionGroupSTG</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OptionGroupSTG</shortDescription>
+        <value>ST Model</value>
+    </labels>
+    <labels>
+        <fullName>PGP</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PGP</shortDescription>
+        <value>Power Generation Products (PGP)</value>
+    </labels>
+    <labels>
+        <fullName>PGP_Budgetary_Price_List</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PGP Budgetary Price List</shortDescription>
+        <value>a8R12000000TNF4</value>
+    </labels>
+    <labels>
+        <fullName>Pce_End_Point_Url</fullName>
+        <categories>Pce Web Services</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pce End Point Url</shortDescription>
+        <value>https://fpssl.geae.com:8733/invoke/GE_BMI_PriceMaster_Service.Services/processPriceMaster</value>
+    </labels>
+    <labels>
+        <fullName>Pce_End_Point_Url_Authorization</fullName>
+        <categories>Pce Web Services</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pce End Point Url Authorization</shortDescription>
+        <value>Qk1JUHJvZDpCTUlQcm9k</value>
+    </labels>
+    <labels>
+        <fullName>Product_Required</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product Required</shortDescription>
+        <value>At least one product exists for the given opportunity</value>
+    </labels>
+    <labels>
+        <fullName>Push_To_Oracle_True</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Push To Oracle = True</shortDescription>
+        <value>ALL product offerings Submitted to Oracle must = True.</value>
+    </labels>
+    <labels>
+        <fullName>R0_NuclearStus_Msg01</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>R0 Module Approval Status ≠ Not Started</shortDescription>
+        <value>Latest created R0 Module Approval Status ≠ Not Started.</value>
+    </labels>
+    <labels>
+        <fullName>R0_NuclearStus_Msg02</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>R0 Module Approval Status must = Approved</shortDescription>
+        <value>Latest created R0 Module Approval Status must = Approved.</value>
+    </labels>
+    <labels>
+        <fullName>R0_or_R1_NuclearStus_Msg01</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>R0 or R1 Module Approval Status = Approved</shortDescription>
+        <value>Either of the latest created R0 or R1 Module Approval Status must = Approved.</value>
+    </labels>
+    <labels>
+        <fullName>R1_NuclearStus_Msg01</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>R1 Module Approval Status ≠ Not Started</shortDescription>
+        <value>Latest created R1 Module Approval Status ≠ Not Started.</value>
+    </labels>
+    <labels>
+        <fullName>R1_NuclearStus_Msg02</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>R1 Module Approval Status must = Approved</shortDescription>
+        <value>Latest created R1 Module Approval Status must = Approved.</value>
+    </labels>
+    <labels>
+        <fullName>R1_NuclearStus_RiskPath</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Commercial Path ≠ Standard or R1 Module Approval Status = Approved</shortDescription>
+        <value>Either Commercial Path ≠ Standard or R1 Module Approval Status = Approved</value>
+    </labels>
+    <labels>
+        <fullName>R1_Risk_Path_NotStandard</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Commercial Path ≠ Standard</shortDescription>
+        <value>Commercial Path ≠ Standard</value>
+    </labels>
+    <labels>
+        <fullName>R2_NuclearStus_Msg01</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>R2 Module Approval Status ≠ Not Started</shortDescription>
+        <value>Latest created R2 Module Approval Status ≠ Not Started.</value>
+    </labels>
+    <labels>
+        <fullName>R2_NuclearStus_Msg02</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>R2 Module Approval Status = Approved</shortDescription>
+        <value>Latest created R2 Module Approval Status must = Approved.</value>
+    </labels>
+    <labels>
+        <fullName>R3_NuclearStus_Msg02</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>R3 Module Approval status = Approved</shortDescription>
+        <value>Latest created R3 Module Approval status must = Approved.</value>
+    </labels>
+    <labels>
+        <fullName>RP_Approval_Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RP_Approval_Email</shortDescription>
+        <value>approval_response@1-72tcvq1u185x2lm83mva2lxat.in.salesforce.com</value>
+    </labels>
+    <labels>
+        <fullName>RP_CountryWithStates</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RP_CountryWithStates</shortDescription>
+        <value>United States;USA;US;</value>
+    </labels>
+    <labels>
+        <fullName>RP_Email_Approve</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RP_Email_Approve</shortDescription>
+        <value>APPROVE ALL;approve all;</value>
+    </labels>
+    <labels>
+        <fullName>RP_Email_Reject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RP_Email_Reject</shortDescription>
+        <value>REJECT ALL;reject all;</value>
+    </labels>
+    <labels>
+        <fullName>Renewable_Transactional_Pricelist</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Renewable Transactional Pricelist</shortDescription>
+        <value>a8R12000000GnL9</value>
+    </labels>
+    <labels>
+        <fullName>Renewables_Ramp_Version</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Renewables Ramp Version</shortDescription>
+        <value>1.0</value>
+    </labels>
+    <labels>
+        <fullName>Renewables_Ramp_Version_EnergyStorage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Renewables_Ramp_Version_EnergyStorage</shortDescription>
+        <value>1.0</value>
+    </labels>
+    <labels>
+        <fullName>Renewables_Ramp_Version_Solar</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Renewables_Ramp_Version_Solar</shortDescription>
+        <value>1.0</value>
+    </labels>
+    <labels>
+        <fullName>Renewables_Ramp_Version_WindEquipment</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Renewables_Ramp_Version_WindEquipment</shortDescription>
+        <value>2.0</value>
+    </labels>
+    <labels>
+        <fullName>Renewables_Ramp_Version_WindServices</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Renewables_Ramp_Version_WindServices</shortDescription>
+        <value>1.1</value>
+    </labels>
+    <labels>
+        <fullName>RskChk_Clone_Field_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Risk Checklist Clone Field Label</shortDescription>
+        <value>GE_PW_RAMP_GMAppDate__c</value>
+    </labels>
+    <labels>
+        <fullName>SFDC_Org_Url</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFDC Org Url</shortDescription>
+        <value>https://gepw--pwtest.cs10.my.salesforce.com/apex/</value>
+    </labels>
+    <labels>
+        <fullName>SVMXC_Activity_Overlap</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SVMXC_Activity_Overlap</shortDescription>
+        <value>Time overlaps detail in activity</value>
+    </labels>
+    <labels>
+        <fullName>SVMXC_WD_Time_Overlap</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SVMXC_WD_Time_Overlap</shortDescription>
+        <value>Time overlaps details in a work detail for work order: %d</value>
+    </labels>
+    <labels>
+        <fullName>Synchronize_with_Opportunity</fullName>
+        <categories>Button Label</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Synchronize with Opportunity</shortDescription>
+        <value>Synchronize with Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>TC_Accept</fullName>
+        <categories>TC_Accept</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TC_Accept</shortDescription>
+        <value>Accept</value>
+    </labels>
+    <labels>
+        <fullName>TC_Cancel</fullName>
+        <categories>TC_Cancel</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TC_Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>TC_Denial_Popup_Button</fullName>
+        <categories>TC_Denial_Popup_Button</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TC_Denial_Popup_Button</shortDescription>
+        <value>OK</value>
+    </labels>
+    <labels>
+        <fullName>TC_Denial_Popup_Content</fullName>
+        <categories>TC_Denial_Popup_Content</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TC_Denial_Popup_Content</shortDescription>
+        <value>You must agree to the Aviation Terms And  Conditions to Get Access to Chatter</value>
+    </labels>
+    <labels>
+        <fullName>TC_Denial_Popup_Header</fullName>
+        <categories>TC_Denial_Popup_Header</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TC_Denial_Popup_Header</shortDescription>
+        <value>Are You Sure</value>
+    </labels>
+    <labels>
+        <fullName>TC_Header</fullName>
+        <categories>TC_Header</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TC_Header</shortDescription>
+        <value>GE Virtual Shared Community Terms of Service</value>
+    </labels>
+    <labels>
+        <fullName>Web_Methods_integration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>For using the Webmethods User In Trigger</shortDescription>
+        <value>webmethods.integration</value>
+    </labels>
+</CustomLabels>
