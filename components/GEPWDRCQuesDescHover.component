@@ -1,0 +1,13 @@
+<apex:component controller="GEPWDRCQuesDescHoverExt">
+    <apex:pageBlock mode="detail" id="myPageBlock">
+        <!--<apex:repeat value="{!hoverdetail}" var="s">-->
+        <apex:pageblocktable value="{!hoverdetail}" var="s">
+            <apex:column >
+                <apex:outputField value="{!s.rfconfig.GE_PW_Hover_Description__c}" />
+            </apex:column>
+        </apex:pageblocktable>
+        <!--<apex:pageBlockSection >
+        </apex:pageBlockSection>
+        </apex:repeat>-->
+    </apex:pageBlock>
+</apex:component>

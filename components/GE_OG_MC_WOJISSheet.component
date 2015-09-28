@@ -1,0 +1,144 @@
+<apex:component controller="GE_HQ_WOJISSheetController" access="global" >
+    <apex:attribute name="woId" type="String" description="Work Order Id" assignTo="{!WOId}" />
+ 
+    
+    
+    
+    <div class="title" style="font-size:24px;font-weight:bold;text-align:center;" >Job Information Sheet</div>
+    <div style="clear:both;height:10px;" ></div>
+    <div class="sectionTitle" style="font-size:18px; font-weight:bold;" >Customer Details</div>
+    <table cellspacing="4px" style="border: 1px solid black;">
+        <tr>
+            <th align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Customer Name:</th>
+            <td colspan="3" style="font-size:11px; vertical-align:top;" ><apex:outputText value="{!WorkOrder.SVMXC__Company__r.Name}" /></td>
+        </tr>
+        <tr>
+            <th align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Customer Site Name:</th>
+            <td colspan="3" style="font-size:11px; vertical-align:top;" ><apex:outputText value="{!WorkOrder.SVMXC__Case__r.GE_SM_HQ_Site_Name__c}" /></td>
+        </tr>
+        <tr>
+            <th align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Customer Site Address:</th>
+            <td colspan="3" style="font-size:11px; vertical-align:top;" ><apex:outputText value="{!WorkOrder.SVMXC__City__c}" /> / <apex:outputText value="{!WorkOrder.SVMXC__State__c}" rendered="{!WorkOrder.SVMXC__State__c != null}" /> / <apex:outputText value="{!WorkOrder.SVMXC__Country__c}" /> / <apex:outputText value="{!WorkOrder.SVMXC__Zip__c}" /></td>
+        </tr>
+        <tr>
+            <th align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Ship To Address:</th>
+            <td colspan="3" style="font-size:11px; vertical-align:top;" ><apex:outputText value="{!WorkOrder.GE_SM_HQ_Ship_to_Address__c}" /></td>
+        </tr>
+        <tr>
+            <th width="1.8in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Cust Rep Name:</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.SVMXC__Contact__r.Name}" /></td>
+            <th width="1.5in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Rep Title:</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.GE_SM_HQ_Site_CRTitle__c}" /></td>
+        </tr>
+        <tr>
+            <th width="1.8in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Cust Rep Mobile:</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.GE_SM_HQ_Site_CRMobile__c}" /></td>
+            <th width="1.5in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">E-mail:</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.GE_SM_HQ_Site_CREmail__c}" /></td>
+        </tr>
+    </table>
+    <div style="clear:both;height:10px" ></div>
+    <div class="sectionTitle" style="font-size:18px; font-weight:bold;" >Equipment Details</div>
+    <table cellspacing="4px" style="border: 1px solid black;" >
+        <tr>
+            <th width="1.8in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Turbine Serial Number(s):</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.GE_SM_HQ_Installed_Base__r.Name}" /></td>
+            <th width="1.5in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Equipment Type(s):</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.GE_SM_HQ_Eq_Type__c}" /></td>
+        </tr>
+        <tr>
+            <th width="1.8in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Driven Equipment:</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.GE_SM_HQ_Driven_Eq__c}" /></td>
+            <th width="1.5in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Unit Number(s):</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.GE_SM_HQ_Unit_Nbr__c}" /></td>
+        </tr>
+        <tr>
+            <th width="1.8in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Control System:</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.GE_SM_HQ_Control_System__c}" /></td>
+            <th width="1.5in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Excitation:</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.GE_SM_HQ_Excitation__c}" /></td>
+        </tr>
+        <tr>
+            <th align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Skill:</th>
+            <td colspan="3" style="font-size:11px; vertical-align:top;" ><apex:outputText value="{!WorkOrder.SVMXC__Skill__r.Name}" /></td>
+        </tr>
+    </table>
+    <div style="clear:both;height:10px" ></div>
+    <div class="sectionTitle" style="font-size:18px; font-weight:bold;" >Workscope Details:</div>
+    <table cellspacing="4px" style="border: 1px solid black;" >
+        <tr>
+            <th align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Workscope:</th>
+            <td colspan="3" style="font-size:11px; vertical-align:top;" ><apex:outputText value="{!WorkOrder.GE_SM_HQ_Task_Description__c}" /></td>
+        </tr>
+        <tr>
+            <th width="1.8in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">SAP Project #:</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.GE_SM_OG_MC_SAP_Project_Number__c}" /></td>
+            <th width="1.5in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Network #:</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.GE_SM_OG_MC_Network_Number__c}" /></td>
+        </tr>
+    </table>    
+    <div style="clear:both;height:10px" ></div>
+    <div class="sectionTitle" style="font-size:18px; font-weight:bold;" >Contact Details:</div>
+    <table cellpadding="4px" style="border: 1px solid black;" >
+        <tr>
+            <th width="1.8in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">FE/TA Name:</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.SVMXC__Group_Member__r.Name}" /></td>
+            <th width="1.5in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Tel No:</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.SVMXC__Group_Member__r.SVMXC__Phone__c}" /></td>
+        </tr>
+        <tr>
+            <th width="1.8in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">SM Name:</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.GE_SM_HQ_SM_Name__c}" /></td>
+            <th width="1.5in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Tel No:</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.GE_SM_HQ_SM_TelNo__c}" /></td>
+        </tr>
+        <tr>
+            <th width="1.8in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Dispatcher Name:</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.GE_SM_HQ_Dispatcher_Name__c}" /></td>
+            <th width="1.5in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Email:</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{!WorkOrder.GE_SM_HQ_Dispatcher_Email__c}" /></td>
+        </tr>
+    </table>    
+    <div style="clear:both;height:10px" ></div>
+    <div class="sectionTitle" style="font-size:18px; font-weight:bold;" >Mobilization Details:</div>
+    <table cellpadding="4px" style="border: 1px solid black;" >
+        <tr>
+            <th width="1.8in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">On Site Start Date:</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{0,date,yyyy.MM.dd}" ><apex:param value="{!WorkOrder.GE_SM_HQ_Scheduled_Start_Date_Time__c}" /></apex:outputText></td>
+            <th width="1.5in"  align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">End Date:</th>
+            <td width="2in" style="font-size:11px; vertical-align:top;"><apex:outputText value="{0,date,yyyy.MM.dd}" ><apex:param value="{!WorkOrder.GE_SM_HQ_Scheduled_End_Date_Time__c}" /></apex:outputText></td>
+        </tr>
+        <tr>
+            <th align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Directions to Plant:</th>
+            <td colspan="3" style="font-size:11px; vertical-align:top;" ><apex:outputText value="{!WorkOrder.SVMXC__Case__r.GE_SM_HQ_Directions__c}" /></td>
+        </tr>
+        <tr>
+            <th align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Special Instructions:</th>
+            <td colspan="3" style="font-size:11px; vertical-align:top;" ><apex:outputText value="{!WorkOrder.SVMXC__Case__r.GE_SM_HQ_MD_Special_Instructions__c}" /></td>
+        </tr>
+    </table>
+    <div style="clear:both;height:10px" ></div>
+    <div class="sectionTitle" style="font-size:18px; font-weight:bold;" >EHS Details:</div>
+    <table cellpadding="4px" style="border: 1px solid black;" >
+        <tr>
+            <th align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Additional PPE Required*:</th>
+            <td colspan="3" style="font-size:11px; vertical-align:top;" ><apex:outputText value="{!WorkOrder.SVMXC__Case__r.GE_SM_HQ_PPE_Req__c}" /></td>
+        </tr>
+        <tr>
+            <th align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">&nbsp;</th>
+            <td colspan="3" style="font-size:11px; vertical-align:top;" >* Standard PPE (e.g. hard hat, safety shoes, glasses, hearing protection, etc.) required for every job</td>
+        </tr>
+        <tr>
+            <th align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Customer Training Required:</th>
+            <td colspan="3" style="font-size:11px; vertical-align:top;" ><apex:outputText value="{!WorkOrder.SVMXC__Case__r.GE_SM_HQ_Customer_Trianing_Req__c}" /></td>
+        </tr>
+        <tr>
+            <th align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Site Entry Requirements:</th>
+            <td colspan="3" style="font-size:11px; vertical-align:top;" ><apex:outputText value="{!WorkOrder.SVMXC__Case__r.GE_SM_HQ_Site_Entry_Req__c}" /></td>
+        </tr>
+        <tr>
+            <th align="right" style="font-size:11px; vertical-align:top;background-color:#D3D3D3;">Special Instructions:</th>
+            <td colspan="3" style="font-size:11px; vertical-align:top;" ><apex:outputText value="{!WorkOrder.SVMXC__Case__r.GE_SM_HQ_EHS_Special_Instructions__c}" /></td>
+        </tr>
+    </table>  
+</apex:component>

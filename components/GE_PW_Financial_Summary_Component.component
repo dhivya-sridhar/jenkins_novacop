@@ -1,0 +1,511 @@
+<apex:component controller="GE_PW_FinancialSummaryComponent" access="global" allowDML="true">
+  <apex:attribute name="proposalId" description="This is the value for the 
+    component." type="String" assignTo="{!quoteID}"/> 
+
+  <apex:stylesheet value="{!$Resource.financialSummaryCSS}"/>  
+
+ <apex:variable var="gt" value="{!0}"/>
+ <apex:variable var="st" value="{!0}"/>
+ <apex:variable var="es" value="{!0}"/>
+ <apex:variable var="ts" value="{!0}"/>
+ <apex:variable var="gs" value="{!0}"/>
+ <apex:variable var="ovc" value="{!0}"/>
+ <apex:variable var="ca" value="{!0}"/>
+ <!--<div class="bPageTitle"><div class="ptBody secondaryPalette brandSecondaryBrd"><div class="content">
+        <img src="/s.gif" class="pageTitleIcon" title="PGP AttributeValues" alt="PGP AttributeValues" />
+        <h3 class="pageDescription">Quote :<a href="/{!quoteId}">{!quoteNo}</a></h3><div class="blank"></div></div></div></div>-->
+<div><h1 style="font-style:italic;"><!--img src="{!URLFOR($resource.GE_Logo)}" style="width:115px;115px;" /--><img src="https://gepw--pwdev--c.cs9.content.force.com/servlet/servlet.ImageServer?id=015K0000001RM9O&oid=00DK000000W4PG3&lastMod=1423742163000" style="width:115px;115px;"/><apex:outputLink value="{!LEFT($Api.Partner_Server_URL_270,FIND('.com',$Api.Partner_Server_URL_270)+4)}{!proposal.Id}">{!proposal.Name} </apex:outputLink> Financial Summary</h1></div>
+<!--<div style="padding-left:5px;padding-right:5px;">-->
+Dear Approver,<br></br>
+<br></br>
+Proposal ID {!proposal.Name} has been submitted for your approval.<br></br>
+The details of the budgetary quote are as follows:<br></br>
+Opportunity Number: {!proposal.Opportunity_Number__c}<br></br>
+Opportunity Name: {!proposal.Apttus_Proposal__Opportunity__r.Name}<br></br>
+Account Name: {!proposal.Apttus_Proposal__Account__r.Name}<br></br>
+Project Name: {!proposal.Project__c}<br></br>
+Requestor: {!proposal.Owner.Name} <br></br>
+Product: {!proposal.GE_PW_Product__c} <br></br>
+Scope: {!proposal.GE_PW_Scope__c} <br></br><br></br><br></br>
+<table width="100%">
+<tr><td colspan="8" bgcolor="0033FF" height="40px"><FONT COLOR="WHITE">Project Summary</FONT></td></tr>
+<tr>
+<td text-align="center" width="25%">Total Price</td>
+<td text-align="center" width="25%">
+<apex:outputText value="{0, number, $###,###,##0}">
+    <apex:param value="{!proposal.Total_Net_Price__c}"/>
+    </apex:outputText>
+</td>
+<td text-align="center" width="25%">Total CM</td>
+<td text-align="center" width="25%">
+<apex:outputText value="{0, number, $###,###,##0}">
+    <apex:param value="{!totalCM}"/>
+    </apex:outputText>
+</td>
+</tr>
+<tr>
+<td text-align="center" width="25%">Total Cost</td>
+<td text-align="center" width="25%">
+<apex:outputText value="{0, number, $###,###,##0}">
+    <apex:param value="{!totalCost}"/>
+    </apex:outputText>
+</td>
+<td text-align="center" width="25%">Total CM%</td>
+<td text-align="center" width="25%">{!proposal.Total_CM__c}%</td>
+</tr>
+<tr>
+<td text-align="center" width="25%">Currency</td>
+<td text-align="center" width="25%">USD</td>
+<td text-align="center" width="25%">Exchange Rate</td>
+<td text-align="center" width="25%">{!proposal.FX_Selection__c}</td>
+</tr>
+</table>
+<br/>
+<table width="100%">
+<tr>
+<td>
+<tr>
+<td text-align="center" width="20%">
+<div float="left" width="125px" text-align="right" margin="2px 10px" display="inline">Gas Turbine Equipment Margin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <apex:outputText value="{0, number, $###,###,##0.00}">
+    <apex:param value="{!gasEquipementMargin}"/>
+    </apex:outputText>
+</div>
+</td>
+</tr>
+<table class="executivesummary" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr><td colspan="8" bgcolor="0033FF" height="40px"><FONT COLOR="WHITE">Gas Turbine</FONT></td></tr>
+  <tr>
+    <td></td>
+    <td text-align="center" width="20%" style="color:blue"><b>Gas Turbine</b></td>
+    <td text-align="center" width="11%" style="color:blue"><b>Cost</b></td>
+    <td text-align="center" width="11%" style="color:blue"><b>Price</b></td>
+    <!--<td text-align="center" width="11%" style="color:blue"><b>CM$</b></td>-->
+    <td text-align="center" width="11%" style="color:blue"><b>CM%</b></td>
+    <td text-align="center" width="20%" style="color:blue"><b>Requested Price</b></td>
+    <td text-align="center" width="11%" style="color:blue"><b>ADJ CM%</b></td>
+  </tr>
+
+  <apex:repeat value="{!gasTurbineSummary}" var="gtLI" >
+  <tr>
+  
+    <td width="5%"><apex:variable var="gt" value="{!gt+1}"/>
+                                    <apex:outputText value="{!gt}"/></td>
+    <td text-align="center" width="20%">{!gtLI.Gas_Turbine__c}</td>
+    <td text-align="center" width="11%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!gtLI.Cost__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="11%">
+    <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!gtLI.Calculated_Price__c}"/>
+        </apex:outputText>
+    </td>
+    <!--<td text-align="center" width="11%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!gtLI.Calculated_CM__c}"/>
+        </apex:outputText>
+    </td>-->
+    <td text-align="center" width="11%">{!gtLI.CM_Percentage__c}%</td>
+    <td text-align="center" width="20%">
+            <apex:outputText value="{0, number, $###,###,##0}">
+            <apex:param value="{!gtLI.Calculated_Discounted_Price__c}"/>
+            </apex:outputText>
+        </td>
+    <td text-align="center" width="11%">{!gtLI.Adj_CM_Percentage__c}%</td>
+  </tr>
+
+  </apex:repeat>
+<tr style="border:white;border-left:white;"><td colspan="4" style="border:none;border-left:none;">&nbsp;</td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td text-align="center" width="20%">
+<div float="left" width="125px" text-align="right" margin="2px 10px" display="inline">Steam Turbine Equipment Margin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <apex:outputText value="{0, number, $###,###,##0.00}">
+    <apex:param value="{!steamEquipementMargin}"/>
+    </apex:outputText>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<table class="executivesummary" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr><td colspan="8" bgcolor="0033FF" height="40px"><FONT COLOR="WHITE">Steam Turbine</FONT></td></tr>
+  <tr>
+    <td></td>
+    <td text-align="center" width="20%" style="color:blue"><b>Steam Turbine</b></td>
+    <td text-align="center" width="11%" style="color:blue"><b>Cost</b></td>
+    <td text-align="center" width="11%" style="color:blue"><b>Price</b></td>
+    <!--<td text-align="center" width="11%" style="color:blue"><b>CM$</b></td>-->
+    <td text-align="center" width="11%" style="color:blue"><b>CM%</b></td>
+    <td text-align="center" width="20%" style="color:blue"><b>Requested Price</b></td>
+    <td text-align="center" width="11%" style="color:blue"><b>ADJ CM%</b></td>
+  </tr>
+
+  <apex:repeat value="{!steamTurbineSummary}" var="stLI" >
+  <tr>
+  
+    <td width="5%"><apex:variable var="st" value="{!st+1}"/>
+                                    <apex:outputText value="{!st}"/></td>
+    <td text-align="center" width="20%">{!stLI.Steam_Turbine__c}</td>
+    <td text-align="center" width="11%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!stLI.Cost__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="11%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!stLI.Calculated_Price__c}"/>
+        </apex:outputText>
+    </td>
+    <!--<td text-align="center" width="11%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!stLI.Calculated_CM__c}"/>
+        </apex:outputText>
+    </td>-->
+    <td text-align="center" width="11%">{!stLI.CM_Percentage__c}%</td>
+    <td text-align="center" width="20%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!stLI.Calculated_Discounted_Prce__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="11%">{!stLI.Adj_CM_Percentage__c}%</td>
+  </tr>
+
+  </apex:repeat>
+<tr style="border:white;border-left:white;"><td colspan="4" style="border:none;border-left:none;">&nbsp;</td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td text-align="center" width="20%">
+<div float="left" width="125px" text-align="right" margin="2px 10px" display="inline">PGS Equipment Margin $&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <apex:outputText value="{0, number, $###,###,##0.00}">
+    <apex:param value="{!energyEquipementMargin}"/>
+    </apex:outputText>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<table class="executivesummary" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr><td colspan="8" bgcolor="0033FF" height="40px"><FONT COLOR="WHITE">Energy Services</FONT></td></tr>
+  <tr>
+    <td></td>
+    <td text-align="center" width="20%" style="color:blue"><b>Energy Services</b></td>
+    <td text-align="center" width="11%" style="color:blue"><b>Cost</b></td>
+    <td text-align="center" width="11%" style="color:blue"><b>Price</b></td>
+    <!--<td text-align="center" width="11%" style="color:blue"><b>CM$</b></td>-->
+    <td text-align="center" width="11%" style="color:blue"><b>CM%</b></td>
+    <td text-align="center" width="20%" style="color:blue"><b>Requested Price</b></td>
+    <td text-align="center" width="11%" style="color:blue"><b>ADJ CM%</b></td>
+  </tr>
+
+  <apex:repeat value="{!enegryServiceSummary}" var="esLI" >
+  <tr>
+  
+    <td width="5%"><apex:variable var="es" value="{!es+1}"/>
+                                    <apex:outputText value="{!es}"/></td>
+    <td text-align="center" width="20%">{!esLI.Energy_Services__c}</td>
+    <td text-align="center" width="11%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!esLI.Cost__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="11%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!esLI.Calculated_Price__c}"/>
+        </apex:outputText>
+    </td>
+    <!--<td text-align="center" width="11%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!esLI.Calculated_CM__c}"/>
+        </apex:outputText>
+    </td>-->
+    <td text-align="center" width="11%">{!esLI.CM_Percentage__c}%</td>
+    <td text-align="center" width="20%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!esLI.Calculated_Discounted_Price__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="11%">{!esLI.Adj_CM_Percentage__c}%</td>
+  </tr>
+
+  </apex:repeat>
+<tr style="border:white;border-left:white;"><td colspan="4" style="border:none;border-left:none;">&nbsp;</td></tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td>
+<table class="executivesummary" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr><td colspan="10" bgcolor="0033FF" height="40px"><FONT COLOR="WHITE">Turbine</FONT></td></tr>
+  <tr>
+    <td></td>
+    <td text-align="center" width="20%" style="color:blue"><b>Type</b></td>
+    <td text-align="center" width="9%" style="color:blue"><b>Material (GT)</b></td>
+    <td text-align="center" width="9%" style="color:blue"><b>Labour (GT)</b></td>
+    <td text-align="center" width="9%" style="color:blue"><b>OH (GT)</b></td>
+    <td text-align="center" width="9%" style="color:blue"><b>Total (GT)</b></td>
+    <td text-align="center" width="9%" style="color:blue"><b>Material (ST)</b></td>
+    <td text-align="center" width="9%" style="color:blue"><b>Labour (ST)</b></td>
+    <td text-align="center" width="9%" style="color:blue"><b>OH (ST)</b></td>
+    <td text-align="center" width="9%" style="color:blue"><b>Total (ST)</b></td>
+  </tr>
+
+  <apex:repeat value="{!turbineSummary}" var="tsLI" >
+  <tr>
+  
+    <td width="5%"><apex:variable var="ts" value="{!ts+1}"/>
+                                    <apex:outputText value="{!ts}"/></td>
+    <td text-align="center" width="20%">{!tsLI.Type__c}</td>
+    <td text-align="center" width="9%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!tsLI.Material_GT__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="9%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!tsLI.Labor_GT__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="9%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!tsLI.OH_GT__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="9%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!tsLI.Total_GT__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="9%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!tsLI.Material_ST__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="9%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!tsLI.Labor_ST__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="9%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!tsLI.OH_ST__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="9%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!tsLI.Total_ST__c}"/>
+        </apex:outputText>
+    </td>
+  </tr>
+
+  </apex:repeat>
+<tr style="border:white;border-left:white;"><td colspan="4" style="border:none;border-left:none;">&nbsp;</td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table class="executivesummary" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr><td colspan="10" bgcolor="0033FF" height="40px"><FONT COLOR="WHITE">Generator</FONT></td></tr>
+  <tr>
+    <td></td>
+    <td text-align="center" width="20%" style="color:blue"><b>Type</b></td>
+    <td text-align="center" width="9%" style="color:blue"><b>Material (GT)</b></td>
+    <td text-align="center" width="9%" style="color:blue"><b>Labour (GT)</b></td>
+    <td text-align="center" width="9%" style="color:blue"><b>OH (GT)</b></td>
+    <td text-align="center" width="9%" style="color:blue"><b>Total (GT)</b></td>
+    <td text-align="center" width="9%" style="color:blue"><b>Material (ST)</b></td>
+    <td text-align="center" width="9%" style="color:blue"><b>Labour (ST)</b></td>
+    <td text-align="center" width="9%" style="color:blue"><b>OH (ST)</b></td>
+    <td text-align="center" width="9%" style="color:blue"><b>Total (ST)</b></td>
+  </tr>
+
+  <apex:repeat value="{!generatorSummary}" var="gsLI" >
+  <tr>
+  
+    <td width="5%"><apex:variable var="gs" value="{!gs+1}"/>
+                                    <apex:outputText value="{!gs}"/></td>
+    <td text-align="center" width="20%">{!gsLI.Type__c}</td>
+    <td text-align="center" width="9%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!gsLI.Material_GT__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="9%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!gsLI.Labor_GT__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="9%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!gsLI.OH_GT__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="9%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!gsLI.Total_GT__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="9%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!gsLI.Material_ST__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="9%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!gsLI.Labor_ST__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="9%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!gsLI.OH_ST__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="9%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!gsLI.Total_ST__c}"/>
+        </apex:outputText>
+    </td>
+  </tr>
+
+  </apex:repeat>
+<tr style="border:white;border-left:white;"><td colspan="4" style="border:none;border-left:none;">&nbsp;</td></tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td>
+<table class="executivesummary" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr><td colspan="8" bgcolor="0033FF" height="40px"><FONT COLOR="WHITE">Other Variable Cost</FONT></td></tr>
+  <tr>
+    <td></td>
+    <td text-align="center" width="20%" style="color:blue"><b>Type</b></td>
+    <td text-align="center" width="12%" style="color:blue"><b>Turbine (GT)</b></td>
+    <td text-align="center" width="12%" style="color:blue"><b>Generator (GT)</b></td>
+    <td text-align="center" width="12%" style="color:blue"><b>Total OVC (GT)</b></td>
+    <td text-align="center" width="12%" style="color:blue"><b>Turbine (ST)</b></td>
+    <td text-align="center" width="12%" style="color:blue"><b>Generator (ST)</b></td>
+    <td text-align="center" width="12%" style="color:blue"><b>Total OVC (ST)</b></td>
+  </tr>
+
+  <apex:repeat value="{!ovcSummary}" var="ovcLI" >
+  <tr>
+  
+    <td width="5%"><apex:variable var="ovc" value="{!ovc+1}"/>
+                                    <apex:outputText value="{!ovc}"/></td>
+    <td text-align="center" width="20%">{!ovcLI.Type__c}</td>
+    <td text-align="center" width="12%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!ovcLI.Turbine_GT__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="12%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!ovcLI.Generator_GT__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="12%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!ovcLI.Total_OVC_GT__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="12%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!ovcLI.Turbine_ST__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="12%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!ovcLI.Generator_ST__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="12%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!ovcLI.Total_OVC_ST__c}"/>
+        </apex:outputText>
+    </td>
+  </tr>
+
+  </apex:repeat>
+<tr style="border:white;border-left:white;"><td colspan="4" style="border:none;border-left:none;">&nbsp;</td></tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td>
+<table class="executivesummary" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr><td colspan="8" bgcolor="0033FF" height="40px"><FONT COLOR="WHITE">Commercial Adders</FONT></td></tr>
+  <tr>
+    <td></td>
+    <td text-align="center" width="20%" style="color:blue"><b>Type</b></td>
+    <td text-align="center" width="12%" style="color:blue"><b>Total (GT)</b></td>
+    <td text-align="center" width="12%" style="color:blue"><b>Total (GEN GT)</b></td>
+    <td text-align="center" width="12%" style="color:blue"><b>Total CA (GT)</b></td>
+    <td text-align="center" width="12%" style="color:blue"><b>Total (ST)</b></td>
+    <td text-align="center" width="12%" style="color:blue"><b>Total (GEN ST)</b></td>
+    <td text-align="center" width="12%" style="color:blue"><b>Total CA (ST)</b></td>
+  </tr>
+
+  <apex:repeat value="{!caSummary}" var="caLI" >
+  <tr>
+  
+    <td width="5%"><apex:variable var="ca" value="{!ca+1}"/>
+                                    <apex:outputText value="{!ca}"/></td>
+    <td text-align="center" width="20%">{!caLI.Type__c}</td>
+    <td text-align="center" width="12%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!caLI.Total_GT__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="12%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!caLI.Total_GEN_GT__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="12%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!caLI.Total_CA_GT__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="12%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!caLI.Total_ST__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="12%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!caLI.Total_GEN_ST__c}"/>
+        </apex:outputText>
+    </td>
+    <td text-align="center" width="12%">
+        <apex:outputText value="{0, number, $###,###,##0}">
+        <apex:param value="{!caLI.Total_CA_ST__c}"/>
+        </apex:outputText>
+    </td>
+  </tr>
+
+  </apex:repeat>
+<tr style="border:white;border-left:white;"><td colspan="4" style="border:none;border-left:none;">&nbsp;</td></tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!--</div>-->
+
+
+ 
+ 
+ 
+ 
+
+</apex:component>
